@@ -261,3 +261,22 @@ bool is_palindrome(node* head) {
 	} 
 	return true;
 }
+
+bool detect_loop(node* head) {
+	if (head == nullptr) return false; 
+	
+	auto trailing = head; 
+	auto leading = head; 
+	
+	while (leading != nullptr) {
+		leading = leading->next; 
+		
+		if (trailing == leading) return true;
+		
+		trailing = trailing->next;
+		
+		if (leading != nullptr) leading = leading->next;
+	} 
+	
+	return false;
+}
