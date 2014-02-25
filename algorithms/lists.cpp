@@ -3,6 +3,7 @@
 
 #include "stdafx.h"
 #include "node.h"
+#include "dll_node.h"
 
 int _tmain(int argc, _TCHAR* argv[])
 {

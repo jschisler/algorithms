@@ -1,4 +1,5 @@
 ﻿#include <algorithm>
+#include <stack>
 
 //  This implementation is just like a stack
 struct node {
@@ -205,55 +206,58 @@ node* remove_values(node* head, int value) {
 	return head;
 }
 
+node* reverse(node* head) {
+	node* prev = nullptr;
 
-////////////////////////////////////////////////////////
-//  Doubly linked list
-struct dll_node {
-	dll_node* prev; 
-	dll_node* next; 
-	int data; 
-	
-	explicit dll_node(int data) : dll_node(this, this, data) {} 
-	dll_node(dll_node* prev, dll_node* next, int data) : prev(prev), next(next), data(data) {}
-};
-
-dll_node* insert(dll_node* head, int data) { 
-	if (head == nullptr)
-		return new dll_node(data); 
-	
-	auto insertion = new dll_node(head->prev, head, data); 
-	insertion->prev->next = insertion; 
-	insertion->next->prev = insertion; 
-	
-	return insertion; 
-}
-
-dll_node* find(dll_node* head, int value) {
-	auto current = head;
-
-	while (current != nullptr && current->data != value) {
-		current = current->next;
-
-		if (current == head) return nullptr;
+	while (head != nullptr) {
+		node* temp = head->next;
+		head->next = prev;
+		prev = head;
+		head = temp;
 	}
 
-	return current;
+	return prev;
 }
 
-dll_node* remove(dll_node* head, dll_node* node) { 
-	if (head->next == head) { 
-		delete node; 
-		return nullptr; 
-	} 
+bool equals(node* x, node* y) { 
+	while (x && y) { 
+		if (x->data != y->data) return false; 
+		
+		x = x->next; 
+		y = y->next; 
+	}
 	
-	node->prev->next = node->next; 
-	node->next->prev = node->prev; 
+	if (x == nullptr && y == nullptr) return true; 
 	
-	if (head == node) { 
-		head = node->next; 
-	} 
-	
-	delete node; 
-	return head; 
+	return false;
 }
 
+node* merge(node* h1, node* h2) { 
+	if (h1 == nullptr || h2 == nullptr) return h1 ? h1 : h2; 
+	
+	auto head = h1; 
+	
+	while (h1->next != nullptr) h1 = h1->next; 
+
+	h1->next = h2; 
+	
+	return head;
+}
+
+bool is_palindrome(node* head) {
+	auto temp = head;
+	std::stack <node* > s;
+
+	while (temp != nullptr) {
+		s.push(temp); 
+		temp = temp->next; 
+	} 
+	
+	while (!s.empty()) { 
+		if (head->data != s.top()->data) return false;
+		
+		s.pop(); 
+		head = head->next; 
+	} 
+	return true;
+}
