@@ -117,14 +117,19 @@ node* find_successor(node* root, node* target) {
 
 /*
 	Removal from a binary search tree has a number of cases that need to be 
-	considered to maintain the order invariant. Removing a leaf node is simple, 
-	since the node has no children it can be deallocated and the parent updated. 
+	considered to maintain the order invariant.
+	
+	Removing a leaf node is simple, since the node has no children it can be 
+	deallocated and the parent updated.
+	
 	If a node has a single child, then that child can replace the node in the 
-	binary search tree and the node deallocated. In the final case when a node 
-	has two children, we want to replace the node with the value of its 
-	successor. Doing so would maintain the order invariant at the node’s location 
-	in a binary search tree. We then need to recursively remove the successor from 
-	the tree to avoid having a duplicate node. 
+	binary search tree and the node deallocated.
+	
+	In the final case when a node has two children, we want to replace the 
+	node with the value of its successor. Doing so would maintain the order 
+	invariant at the node’s location in a binary search tree. We then need 
+	to recursively remove the successor from the tree to avoid having a 
+	duplicate node. 
 	
 	All together, this provides the following algorithm:
 */

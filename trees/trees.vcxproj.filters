@@ -27,12 +27,18 @@
     <ClInclude Include="node.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="AVL.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="trees.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Avl.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
