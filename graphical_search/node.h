@@ -279,6 +279,7 @@ bool detect_cycle(node* origin) {
 typedef std::vector<std::vector<char>> GameBoard; 
 typedef std::pair<size_t, size_t> Position;
 
+//  FIXME:  implement!
 bool isword(const std::string&) { return false; }
 
 void boggle(const GameBoard& board, const Position& pos, std::set<std::string>* words) { 
@@ -336,6 +337,7 @@ void boggle(const GameBoard& board, std::set<std::string>* words) {
 	To begin we refer to each position in the maze as coordinates, and the 
 	function passable determines whether or not that node is passable.
 */
+//  FIXME:  implement!
 bool passable(const GameBoard& board, const Position& pos) { return false; }
 
 /*
