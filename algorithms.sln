@@ -11,6 +11,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "queues_and_stacks", "queues
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "heaps", "heaps\heaps.vcxproj", "{6D4E7B05-D2DF-4581-8A47-16E81FFDC1E4}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hashtables", "hashtables\hashtables.vcxproj", "{8837CD7F-52E4-4337-9632-678B353C75BF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -33,6 +35,10 @@ Global
 		{6D4E7B05-D2DF-4581-8A47-16E81FFDC1E4}.Debug|Win32.Build.0 = Debug|Win32
 		{6D4E7B05-D2DF-4581-8A47-16E81FFDC1E4}.Release|Win32.ActiveCfg = Release|Win32
 		{6D4E7B05-D2DF-4581-8A47-16E81FFDC1E4}.Release|Win32.Build.0 = Release|Win32
+		{8837CD7F-52E4-4337-9632-678B353C75BF}.Debug|Win32.ActiveCfg = Debug|Win32
+		{8837CD7F-52E4-4337-9632-678B353C75BF}.Debug|Win32.Build.0 = Debug|Win32
+		{8837CD7F-52E4-4337-9632-678B353C75BF}.Release|Win32.ActiveCfg = Release|Win32
+		{8837CD7F-52E4-4337-9632-678B353C75BF}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
