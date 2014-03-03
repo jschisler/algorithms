@@ -9,10 +9,10 @@
 	data. Insertion sort is often used for small data sets, but it has quadratic 
 	worst case running time. It should be avoided unless the problem is explicitly 
 	constrained so that it is efficient. Otherwise in an interview the only 
-	quadratic sorting algorithm you should every give is quick sort. And even with 
+	quadratic sorting algorithm you should ever give is quick sort. And even with 
 	a naive quick sort implementation, you should be able to explain that its 
-	basic implementation has order nlog( n) running time in expectation, but can 
-	be made to have deterministic order nlog( n) running time with a clever choice 
+	basic implementation has order nlog(n) running time in expectation, but can 
+	be made to have deterministic order nlog(n) running time with a clever choice 
 	of pivots.
 
 	We will implement five sorting algorithms and discuss their comparative 
@@ -47,10 +47,28 @@
 */
 void insertion_sort(std::vector<int> *array) { 
 	for (unsigned int i = 1; i < array->size(); ++i) { 
-		auto val = (*array)[i]; for (int j = i - 1; j >= 0 && (* array)[j] > val; --j) { 
-			std::swap((* array)[j], (* array)[j + 1]); 
+		auto val = (*array)[i];
+		
+		for (int j = i - 1; j >= 0 && (*array)[j] > val; --j) { 
+			std::swap((*array)[j], (*array)[j + 1]); 
 		} 
 	} 
+}
+
+//  Why not do it this way and avoid the dereferencing of the array?
+//  Also declare the variables once and reuse them.  
+//  Why query the size of the array constantly if it never changes?
+void insertion_sort2(std::vector<int> &array) {
+	int val;
+	unsigned int count = array.size();
+
+	for (unsigned int i = 1; i < count; ++i) {
+		val = array[i];
+
+		for (int j = i - 1; j >= 0 && array[j] > val; --j) {
+			std::swap(array[j], array[j + 1]);
+		}
+	}
 }
 
 /*

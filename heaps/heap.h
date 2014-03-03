@@ -35,11 +35,11 @@ size_t parent_index(const size_t index) {
 
 /*
 	The heapify operation starts with the single element of the vector at index 0. 
-	This single element sub - array trivially satisfies the heap property. The 
+	This single element sub-array trivially satisfies the heap property. The 
 	operation next iteratively adds elements from the vector in such a way that 
 	the heap property is maintained. Concretely, new elements are first added 
-	as leaves.Afterward, parent and child pairs are repeatedly swapped if in 
-	violation of the heap property.When the algorithm terminates, the maximum 
+	as leaves. Afterward, parent and child pairs are repeatedly swapped if in 
+	violation of the heap property. When the algorithm terminates, the maximum 
 	value of the heap is at the first index and the heap property holds.
 */
 void heapify(std::vector<int>* array) { 
@@ -57,7 +57,7 @@ void heapify(std::vector<int>* array) {
 
 /*
 	Insertion of a new value into a binary heap begins with adding the value 
-	as the next available leaf node in the binary tree.Afterward, the 
+	as the next available leaf node in the binary tree. Afterward, the 
 	parent-child relationships are updated to satisfy the heap property as was 
 	done in heapify. Insertion requires the vector to be dynamically resized, 
 	and hence is not an in-place operation.
