@@ -150,3 +150,35 @@ double sqrt(double x, double epsilon) {
 	
 	return lower;
 }
+
+/*
+	To do better we enlist an advanced technique for solving inverse problems 
+	called Newton’s method. This algorithm was discovered first by Isaac 
+	Newton and later simplified by Joseph Raphson. While discussion of this 
+	method involves a small amount of calculus, it provides an efficient 
+	solution to finding roots of any well behaved function.
+
+	See: http://en.wikipedia.org/wiki/Newton%27s_method
+
+	For fractional exponents, Newton’s method guarantees a quadratic rate of 
+	convergence. That is, in every iteration the error decreases by a quadratic 
+	function of the previous error. 
+	
+	Since Newton’s method can be used to approximate any decimal exponentiation, 
+	this method generalized to an elegant general solution to the problem of 
+	calculating exponentiation.
+*/
+namespace newton {
+	double sqrt(double y, double epsilon) {
+		if (y < 0)
+			return -1.0;
+
+		double x = y;
+
+		while (std::abs(y - x * x) > epsilon) {
+			x = x - (x * x - y) / (2 * x);
+		}
+
+		return x;
+	}
+}
