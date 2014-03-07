@@ -5,6 +5,7 @@
 
 #include "vector.h"
 #include "line.h"
+#include "geometric_distance.h"
 
 double epsilon;
 
@@ -58,9 +59,3 @@ vector unit_vector(const vector& v) {
 
 	return{ v.x / length, v.y / length };
 }
-
-int _tmain(int argc, _TCHAR* argv[])
-{
-	return 0;
-}
-

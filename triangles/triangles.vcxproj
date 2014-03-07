@@ -11,9 +11,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{E37E97E5-1D07-4559-AD58-5920CB637859}</ProjectGuid>
+    <ProjectGuid>{F10F2CF6-CC39-4314-8B5E-0E7CBD95CEF0}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>geometric_distance</RootNamespace>
+    <RootNamespace>triangles</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -79,22 +79,19 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="fixed_dim_compartor.h" />
-    <ClInclude Include="geometric_distance.h" />
-    <ClInclude Include="line.h" />
-    <ClInclude Include="node.h" />
+    <ClInclude Include="polygon.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
-    <ClInclude Include="vector.h" />
+    <ClInclude Include="triangle.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="fixed_dim_compartor.cpp" />
-    <ClCompile Include="geometric_distance.cpp" />
-    <ClCompile Include="main.cpp" />
+    <ClCompile Include="polygon.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="triangle.cpp" />
+    <ClCompile Include="triangles.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

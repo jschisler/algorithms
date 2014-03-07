@@ -1,6 +1,8 @@
 #pragma once
 
-#include "vector.h"
+#include "../geometric_distance/vector.h"
+
+typedef vector point;
 
 struct node {
 	vector point;

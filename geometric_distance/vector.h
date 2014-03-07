@@ -14,6 +14,14 @@ struct vector {
 		return{ x + rhs.x, y + rhs.y };
 	}
 
+	vector operator -(const vector& rhs) const {
+		return{ x - rhs.x, y - rhs.y };
+	}
+
+	bool operator ==(const vector& rhs) const {
+		return x == rhs.x && y == rhs.y;
+	}
+
 	double dot(const vector& rhs) const {
 		return (x * rhs.x) + (y * rhs.y);
 	}
