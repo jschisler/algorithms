@@ -25,6 +25,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "bit_twiddling", "bit_twiddl
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "big_integer_arithmetic", "big_integer_arithmetic\big_integer_arithmetic.vcxproj", "{1118A00F-3DC8-4C0E-B665-FCA3BA226E82}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Fibonacci", "Fibonacci\Fibonacci.vcxproj", "{85B49E0A-E329-48B4-9DD3-0B9AF5A22D70}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -75,6 +77,10 @@ Global
 		{1118A00F-3DC8-4C0E-B665-FCA3BA226E82}.Debug|Win32.Build.0 = Debug|Win32
 		{1118A00F-3DC8-4C0E-B665-FCA3BA226E82}.Release|Win32.ActiveCfg = Release|Win32
 		{1118A00F-3DC8-4C0E-B665-FCA3BA226E82}.Release|Win32.Build.0 = Release|Win32
+		{85B49E0A-E329-48B4-9DD3-0B9AF5A22D70}.Debug|Win32.ActiveCfg = Debug|Win32
+		{85B49E0A-E329-48B4-9DD3-0B9AF5A22D70}.Debug|Win32.Build.0 = Debug|Win32
+		{85B49E0A-E329-48B4-9DD3-0B9AF5A22D70}.Release|Win32.ActiveCfg = Release|Win32
+		{85B49E0A-E329-48B4-9DD3-0B9AF5A22D70}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -28,6 +28,20 @@ int _tmain(int argc, _TCHAR* argv[])
 	std::cout << std::get<0>(foo) << ' ';
 	std::cout << std::get<1>(foo) << '\n';
 
+	//  Sorting test
+	int a[] = { 12, 10, 43, 23, -78, 45, 123, 56, 98, 41, 90, 24 };
+	int num;
+
+	num = sizeof(a) / sizeof(int);
+
+	int b[12];
+
+	mergesort(a, b, 0, num - 1);
+
+	for (int i = 0; i<num; i++)
+		cout << a[i] << " ";
+	cout << endl;
+
 	return 0;
 }
 

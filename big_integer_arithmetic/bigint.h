@@ -73,7 +73,7 @@ bigint twos_complement(const bigint& b) {
 }
 
 bool msb_set(const bigint& b) { 
-	return b[0] & 0x80; 
+	return (b[0] & 0x80) == 1; 
 }
 
 signed_bigint subtract(bigint lhs, bigint rhs) { 
@@ -113,6 +113,10 @@ signed_bigint subtract(bigint lhs, bigint rhs) {
 	return retval; 
 }
 
+bigint operator -(const bigint& lhs, const bigint& rhs) {
+	return subtract(lhs, rhs).value;
+}
+
 bigint operator *(const bigint& lhs, const bigint& rhs) { 
 	auto mult_term = [](const bigint& lhs, unsigned char term) { 
 		bigint prod; 
@@ -145,3 +149,38 @@ bigint operator *(const bigint& lhs, const bigint& rhs) {
 	
 	return prod; 
 }
+
+bigint karatsuba_recursive(const bigint& lhs, const bigint& rhs) { 
+	if (!lhs.size()) 
+		return{ 0x00 }; 
+	
+	if (lhs.size() == 1) 
+		return lhs * rhs; 
+	
+	auto length = lhs.size() / 2; 
+	bigint a1(lhs.begin(), lhs.begin() + length); 
+	bigint a0(lhs.begin() + length, lhs.end()); 
+	bigint b1(rhs.begin(), rhs.begin() + length); 
+	bigint b0(rhs.begin(), rhs.begin() + length); 
+	bigint p = karatsuba_recursive(a1, b1); 
+	bigint q = karatsuba_recursive(a0, b0); 
+	bigint r = karatsuba_recursive(a1 + a0, b1 + b0) - q - p;
+
+	p.insert(p.end(), length * 2, 0x00); 
+	r.insert(r.end(), length, 0x00); 
+	
+	return p + r + q; 
+}
+
+bigint karatsuba(bigint lhs, bigint rhs) {
+	if (lhs.size() > rhs.size()) { 
+		rhs.insert(rhs.begin(), lhs.size() - rhs.size(), 0); 
+	} 
+	
+	if (rhs.size() > lhs.size()) { 
+		lhs.insert(lhs.begin(), rhs.size() - lhs.size(), 0); 
+	} 
+	
+	return karatsuba_recursive(lhs, rhs);
+}
+
